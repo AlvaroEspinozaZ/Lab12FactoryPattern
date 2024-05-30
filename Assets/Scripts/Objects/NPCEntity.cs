@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FactoryLab12;
+
 public class NPCEntity : MonoBehaviour, InterfaceEntity
 {
     public void MoveEntity()

@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FactoryLab12;
+[CreateAssetMenu(fileName = "Factorys", menuName = "ScriptableObject/Factorys/FactoryNPC")]
 public class FactoryNPC : FactoryBase
 {
-    [SerializeField] NPCEntity currentN;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GlobalPrefab currentN;
+ 
     public override void createEntity()
     {
-        NPCEntity tmp = Instantiate(currentN);
+        NPCEntity tmp = Instantiate(currentN.prefab.GetComponent<NPCEntity>());
     }
 }

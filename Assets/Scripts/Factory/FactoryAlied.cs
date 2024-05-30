@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FactoryLab12;
+[CreateAssetMenu(fileName = "Factorys", menuName = "ScriptableObject/Factorys/FactoryAlied")]
 public class FactoryAlied : FactoryBase
 {
-    [SerializeField]AliedEntity currentA;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GlobalPrefab currentA;
+ 
     public override void createEntity()
     {
-        Instantiate(currentA);
+        AliedEntity tmp = Instantiate(currentA.prefab.GetComponent<AliedEntity>());
     }
 }
